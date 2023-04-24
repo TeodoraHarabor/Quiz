@@ -1,19 +1,41 @@
 var myQuestions = [
   {
-    question: "What is 10/2?",
+    question: "1.Which one of the following actors did not play James Bond?",
     answers: {
-      a: "3",
-      b: "5",
-      c: "115",
+      a: "Daniel Craig",
+      b: "Pierce Brosman",
+      c: "Colin Firth",
+      d: "Sean Connery",
+    },
+    correctAnswer: "c",
+  },
+  {
+    question: "2.What is the boiling point temperature (water)?",
+    answers: {
+      a: "50 °C",
+      b: "100 °C",
+      c: "150 °C",
+      d: "200 °C",
     },
     correctAnswer: "b",
   },
   {
-    question: "What is 30/3?",
+    question: "3.Which fruit is associated with Isaac Newton?",
     answers: {
-      a: "3",
-      b: "5",
-      c: "10",
+      a: "Apple",
+      b: "Pear",
+      c: "Pineapple",
+      d: "Banana",
+    },
+    correctAnswer: "a",
+  },
+  {
+    question: "4.What is the capital city of Australia?",
+    answers: {
+      a: "Sydney",
+      b: "Melbourne",
+      c: "Canberra",
+      d: "Brisbane",
     },
     correctAnswer: "c",
   },
@@ -89,6 +111,8 @@ function generateQuiz(
           "input[name=question" + i + "]:checked"
         ) || {}
       ).value;
+      console.log("Question:", questions[i]);
+      console.log("User:", userAnswer);
 
       // if answer is correct
       if (userAnswer === questions[i].correctAnswer) {
@@ -96,8 +120,10 @@ function generateQuiz(
         numCorrect++;
 
         // color the answers green
-        answerContainers[i].style.color = "lightgreen";
+        answerContainers[i].style.color = "rgb(89, 188, 89)";
+        console.log("grr", answerContainers);
       }
+
       // if answer is wrong or blank
       else {
         // color the answers red
